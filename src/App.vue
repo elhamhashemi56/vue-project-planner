@@ -1,8 +1,9 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Projects</router-link> |
+    <router-link :to="{name:'CreateProject'}">Add a New Project</router-link>
   </nav>
+
   <router-view/>
 </template>
 

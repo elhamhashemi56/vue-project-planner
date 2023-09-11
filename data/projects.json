@@ -1,0 +1,7 @@
+{
+    "projects":[
+        {"name":"Hubgrade","detail":"Hubgrade detail"},
+        {"name":"AusbildendeApp","detail":"AusbildendeApp detail"},
+        {"name":"Reaction Timer","detail":"Reaction Timer detail"}
+    ]
+}
