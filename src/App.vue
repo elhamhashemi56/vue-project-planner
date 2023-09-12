@@ -3,8 +3,8 @@
     <router-link to="/">Projects</router-link> |
     <router-link :to="{name:'CreateProject'}">Add a New Project</router-link>
   </nav>
-
   <router-view/>
+  
 </template>
 
 <style>
@@ -27,5 +27,9 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+body{
+  background: #efefef;
 }
 </style>
