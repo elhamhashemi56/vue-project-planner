@@ -11,7 +11,8 @@
   <div v-if="projects.length">
     <div class="projects_Container" v-for="item in projects" :key="item.id">
       <div>
-        <div v-if="item.done === true" @click="handleShowDetail">{{item.name}}</div>
+        <div v-if="item.done === true" @click="handleShowDetail">{{item.name}}{{ item.done }}</div>
+        <div v-else>{{ item.done }}</div>
         <div v-if="showDetail">{{ item.detail }}</div>
       </div>
       <section>icons</section>

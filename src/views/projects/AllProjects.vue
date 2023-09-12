@@ -11,13 +11,16 @@
   <div v-if="projects.length">
     <div class="projects_Container" v-for="item in projects" :key="item.id">
       <div>
-        <div @click="handleShowDetail">{{item.name}}</div>
+        <div @click="handleShowDetail">{{item.name}}-{{item.id}}</div>
         <div v-if="showDetail">{{ item.detail }}</div>
       </div>
+      
       <section>
-        <img class="iconsKlass" src="../../assets/icons/edit.svg" />
+        <router-link :to="{name:'EditProject',params:{id:item.id}}"> 
+          <img class="iconsKlass" @click="handleEdit" src="../../assets/icons/edit.svg" />
+        </router-link>
         <img class="iconsKlass" @click="handleDelete(item.id)" src="../../assets/icons/delete.svg" />
-        <img class="iconsKlass" src="../../assets/icons/done.svg" />
+        <img class="iconsKlass" @click="handleDone(item.id)" src="../../assets/icons/done.svg" />
       </section>
     </div>
   </div> 
@@ -31,7 +34,8 @@ export default {
   data(){
     return{
       projects:[],
-      showDetail:false
+      showDetail:false,
+      
     }
   },
   mounted(){
@@ -58,6 +62,24 @@ export default {
         alert("project deleted")
       })
       .catch(err=>alert(err.message))
+    },
+
+    handleEdit(){
+      this.editMode=!this.editMode
+    },
+    handleDone(id){
+      console.log(id);
+      const projectDone=this.projects.find(item=>item.id === id)
+      console.log(projectDone);
+      // projectDone.done = !projectDone.done
+      const body={
+        done:!projectDone.done
+      }
+      ProjectsService.updateProjectDone(id,body)
+      .then(res=>{
+          console.log(res.data);
+      })
+      .catch(err=>err.message)
     }
   }
 
@@ -78,6 +100,7 @@ export default {
 
 .iconsKlass{
   padding: 3px;
+  cursor: pointer;
   
 }
 </style>
