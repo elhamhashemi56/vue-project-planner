@@ -56,7 +56,6 @@ export default {
             }
             ProjectsService.updateProject(id,body)
             .then(res=>this.$router.push({name:"AllProjects"}))
-            
             .catch(err=>alert(err.message))
 
         },

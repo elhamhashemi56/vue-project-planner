@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AllProjects from "../views/projects/AllProjects.vue"
 import CreateProject from "../views/CreateProject.vue"
-import CompletedProjects from "../views/projects/CompletedProjects.vue"
-import OnGoingProjects from "../views/projects/OnGoingProjects.vue"
 import EditProject from "../views/projects/EditProject.vue"
 
 
@@ -24,18 +22,7 @@ const routes = [
     component: EditProject
    
   },
-  {
-    path: '/completed',
-    name: 'CompletedProjects',
-    component: CompletedProjects
-   
-  },
-  {
-    path: '/ongoing',
-    name: 'OnGoingProjects',
-    component: OnGoingProjects
-   
-  },
+ 
 ]
 
 const router = createRouter({

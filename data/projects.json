@@ -3,13 +3,13 @@
     {
       "name": "Docker",
       "detail": "Docker detail",
-      "done": true,
+      "done": false,
       "id": 2
     },
     {
       "name": "Reaction Timer4",
       "detail": "Reaction Timer detail4",
-      "done": false,
+      "done": true,
       "id": 3
     }
   ]

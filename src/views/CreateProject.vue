@@ -28,6 +28,7 @@ export default {
       name:"",
       detail:"",
       done:false,
+      id:6
     }
   },
   methods:{
@@ -37,13 +38,11 @@ export default {
         name: this.name,
         detail: this.detail,
         done: this.done,
-        id:5
+        id:this.id+1
       }
 
       ProjectsService.addProject(newProject)
-      .then(res=>{
-        alert("project added")
-      })
+      .then(res=>this.$router.push({name:"AllProjects"}))
       .catch(err=>alert(err.message))
     }
   }
