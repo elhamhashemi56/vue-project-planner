@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import {ProjectsService} from "../../service/project.service.js"
+import {ProjectsService} from "../service/project.service.js"
 import SingleProject from "./SingleProject.vue"
 export default {
   components:{SingleProject},

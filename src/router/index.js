@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AllProjects from "../views/projects/AllProjects.vue"
+import Home from "../views/Home.vue"
 import CreateProject from "../views/CreateProject.vue"
-import EditProject from "../views/projects/EditProject.vue"
+import EditProject from "../views/EditProject.vue"
 
 
 const routes = [
   {
     path: '/',
-    name: 'AllProjects',
-    component: AllProjects
+    name: 'Home',
+    component: Home
   },
   {
     path: '/newProject',

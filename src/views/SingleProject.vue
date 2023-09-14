@@ -7,17 +7,17 @@
       
       <section>
         <router-link :to="{name:'EditProject',params:{id:projectProps.id}}"> 
-          <img class="iconsKlass" src="../../assets/icons/edit.svg" />
+          <img class="iconsKlass" src="../assets/icons/edit.svg" />
         </router-link>
-        <img class="iconsKlass" @click="handleDelete(projectProps.id)" src="../../assets/icons/delete.svg" />
-        <img class="iconsKlass" @click="handleDone(projectProps.id)" src="../../assets/icons/done.svg" />
+        <img class="iconsKlass" @click="handleDelete(projectProps.id)" src="../assets/icons/delete.svg" />
+        <img class="iconsKlass" @click="handleDone(projectProps.id)" src="../assets/icons/done.svg" />
       </section>
     </div>
  
 </template>
 
 <script>
-import { ProjectsService } from '@/service/project.service'
+import { ProjectsService } from '../service/project.service.js'
 export default {
     props:["projectProps"],
     data(){

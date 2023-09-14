@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { ProjectsService } from '@/service/project.service'
+import { ProjectsService } from "../service/project.service.js"
 export default {
 
     props: ['id'],
@@ -58,12 +58,12 @@ export default {
                 
             }
             ProjectsService.updateProject(id,body)
-            .then(res=>this.$router.push({name:"AllProjects"}))
+            .then(res=>this.$router.push({name:"Home"}))
             .catch(err=>alert(err.message))
 
         },
         handleCancleUpdate(){
-            this.$router.push({name:"AllProjects"})
+            this.$router.push({name:"Home"})
         }
     }
 

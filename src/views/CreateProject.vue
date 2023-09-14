@@ -40,7 +40,7 @@ export default {
       }
 
       ProjectsService.addProject(newProject)
-      .then(()=>this.$router.push({name:"AllProjects"}))
+      .then(()=>this.$router.push({name:"Home"}))
       .catch(err=>alert(err.message))
     }
   }
