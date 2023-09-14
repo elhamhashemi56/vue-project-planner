@@ -21,7 +21,7 @@ export const ProjectsService={
     },
 
     updateProject(id,body){
-        return axios.put(baseUrl + "/projects"+ `/${id}`,body)
+        return axios.patch(baseUrl + "/projects"+ `/${id}`,body)
     },
     updateProjectDone(id,body){
         return axios.patch(baseUrl + "/projects"+ `/${id}`,body)

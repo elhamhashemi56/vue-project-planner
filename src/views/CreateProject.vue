@@ -4,12 +4,12 @@
 
     <div class="formFields">
       <label>Name:</label>
-      <input type="text" v-model="name">
+      <input type="text" required v-model="name">
     </div>
     
     <div class="formFields">
       <label>Detail:</label>
-      <input type="text" v-model="detail">
+      <input type="text" required v-model="detail">
     </div>
     
 
@@ -28,7 +28,6 @@ export default {
       name:"",
       detail:"",
       done:false,
-      id:6
     }
   },
   methods:{
@@ -38,11 +37,10 @@ export default {
         name: this.name,
         detail: this.detail,
         done: this.done,
-        id:this.id+1
       }
 
       ProjectsService.addProject(newProject)
-      .then(res=>this.$router.push({name:"AllProjects"}))
+      .then(()=>this.$router.push({name:"AllProjects"}))
       .catch(err=>alert(err.message))
     }
   }

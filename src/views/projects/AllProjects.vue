@@ -45,8 +45,6 @@ export default {
   },
 
   methods: {
-
-    
     handleDoneEmit(id) {
       let p = this.projects.find(item => item.id === id)
       console.log("p",p);

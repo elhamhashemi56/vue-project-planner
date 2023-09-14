@@ -33,16 +33,17 @@ export default {
 
         handleDelete(id) {
             ProjectsService.deleteProject(id)
-            .then(this.$emit("deleteEmit",id))
+            .then(()=>this.$emit("deleteEmit",id))
             .catch(err => alert(err.message))
         },
 
         handleDone(id){
+            console.log("this.projectProps.done",this.projectProps.done);
             const body = {
                 done: !this.projectProps.done
             }
             ProjectsService.updateProjectDone(id, body)
-                .then(this.$emit("doneEmit",id))
+                .then(()=>this.$emit("doneEmit",id))
                 .catch(err => err.message)
         }
 
