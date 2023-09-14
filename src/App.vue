@@ -1,5 +1,7 @@
 <template>
-  <Navbar />  
+  <div class="mainNavbar">
+    <Navbar />  
+  </div>
 </template>
 
 <script>
@@ -18,10 +20,13 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+.mainNavbar{
+  margin: 10px 0;
 }
 
+nav{
+  padding: 10px;
+}
 nav a {
   font-weight: bold;
   color: #2c3e50;

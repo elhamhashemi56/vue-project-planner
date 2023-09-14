@@ -1,6 +1,6 @@
 <template>
-    <div class="project_Container">
-        <div>
+    <div class="project_Container" :class="{leftBorder:projectProps.done}">
+      <div>
         <div @click="handleShowDetail">{{projectProps.name}}--{{projectProps.id}}--{{projectProps.done}}</div>
         <div v-if="showDetail">{{ projectProps.detail }}</div>
       </div>
@@ -58,15 +58,19 @@ export default {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
-  max-width: 60%;
+  max-width: 40%;
   margin: 10px auto;
-  background-color: aliceblue;
+  background-color: white;
   padding: 20px;
+  border-left: 5px solid rgba(215, 11, 62, 0.827);
   
 }
 .iconsKlass{
   padding: 3px;
   cursor: pointer;
   
+}
+.leftBorder{
+  border-left: 5px solid rgba(6, 132, 117, 0.827);
 }
 </style>
