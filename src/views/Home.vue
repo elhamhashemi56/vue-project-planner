@@ -1,9 +1,12 @@
 <template>
   
-  <NavbarFilter />
+  <NavbarFilter @filterChangeEmit="handleFilterEmit"
+                :currentProps="current"
+                />
 
   <div v-if="projects.length">
-    <div  v-for="item in projects" :key="item.id">
+    <!-- <div  v-for="item in projects" :key="item.id"> -->
+    <div  v-for="item in filteredProjects" :key="item.id">
       <SingleProject :projectProps="item"
                      @deleteEmit="handleDeleteEmit"
                      @doneEmit="handleDoneEmit"
@@ -23,7 +26,7 @@
     data() {
       return {
         projects: [],
-        showDetail: false,
+        current:"all"
 
       }
     },
@@ -47,21 +50,23 @@
         p.done = !p.done
       },
 
-
-
-      handleCompleted() {
-        this.projects = this.projects.filter(item => item.done === true)
+      handleFilterEmit(by){
+        this.current=by
       },
 
-      handleOnGoing() {
-        this.projects = this.projects.filter(item => item.done === false)
-      },
-
-      handleDeleteEmit(id) {
-        this.projects = this.projects.filter(item => item.id !== id)
-      }
     },
 
+    computed:{
+        filteredProjects(){
+          if(this.current === "completed"){
+            return this.projects.filter(item=>item.done)
+          }else if(this.current === "ongoing"){
+            return this.projects.filter(item=>!item.done)
+          }else{
+            return this.projects
+          }
+        }
+      }
 
   }
 </script>

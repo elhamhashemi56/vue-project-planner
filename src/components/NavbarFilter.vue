@@ -1,16 +1,22 @@
 <template>
   <nav class="navbarFilter">
-    <button>VIEW ALL</button>
-    <button>COMPLETED</button>
-    <button>ONGOING</button>
+    <button @click="updateFilter('all')" :class="{active:currentProps === 'all'}">VIEW ALL</button>
+    <button @click="updateFilter('completed')" :class="{active:currentProps === 'completed'}">COMPLETED</button>
+    <button @click="updateFilter('ongoing')" :class="{active:currentProps === 'ongoing'}">ONGOING</button>
   </nav>
  
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        props:["currentProps"],
+        methods:{
+            updateFilter(by){
+                this.$emit('filterChangeEmit',by)
+            } 
+        }
+        
+    }
 </script>
 
 <style>
@@ -21,11 +27,16 @@ export default {
 }
 .navbarFilter button{
    border: none;
-   color: darkgray;
+  color: #8d8c8c;
    cursor: pointer;
 }
 .navbarFilter button:hover{
-   color: gray;
+  
    cursor: pointer;
+}
+
+.active{
+    color: rgb(64, 63, 63);
+    font-weight: bold;
 }
 </style>
